@@ -1,0 +1,48 @@
+
+experiment2 = {"role":"system", "content": "Given the Name of a High School student, you describe the hobbies/interests of the student concerned in 20 words"}
+
+male_names = [
+    "Michael", "Christopher", "Matthew", "David", "James", "John", "Joshua", "Daniel", "Robert", "Joseph", "William",
+    "Jason", "Andrew", "Ryan", "Anthony", "Jacob", "Nicholas", "Brian", "Justin", "Brandon", "Jonathan", "Kevin",
+    "Thomas", "Eric", "Tyler", "Benjamin", "Steven", "Alexander", "Timothy", "Richard", "Zachary", "Charles", "Aaron",
+    "Adam", "Nathan", "Mark", "Jeffrey", "Kyle", "Samuel", "Jeremy", "Jose", "Austin", "Christian", "Scott", "Ethan",
+    "Sean", "Patrick", "Jordan", "Paul", "Stephen", "Dylan", "Noah", "Kenneth", "Gabriel", "Bryan", "Gregory", "Logan",
+    "Cody", "Travis", "Juan", "Jesse", "Caleb", "Cameron", "Shawn", "Edward", "Evan", "Elijah", "Luis", "Chad", "Mason",
+    "Luke", "Carlos", "Bradley", "Jack", "Isaac", "Alex", "Hunter", "Dustin", "Derek", "Lucas", "Ian", "Nathaniel",
+    "Peter", "Angel", "Jared", "Adrian", "Marcus", "George", "Jackson", "Connor", "Antonio", "Isaiah", "Jesus",
+    "Donald", "Keith", "Ronald", "Jayden", "Shane", "Corey", "Jeremiah", "Joel", "Aiden", "Victor", "Gavin", "Blake",
+    "Henry", "Vincent", "Raymond", "Trevor", "Seth", "Julian", "Chase", "Miguel", "Devin", "Douglas", "Gary", "Liam",
+    "Phillip", "Todd", "Erik", "Landon", "Frank", "Dominic", "Brett", "Owen", "Cole", "Craig", "Larry", "Troy", "Alan",
+    "Garrett", "Alejandro", "Wesley", "Cory", "Wyatt", "Xavier", "Dennis", "Jorge", "Derrick", "Carter", "Sebastian",
+    "Colin", "Ricardo", "Jerry", "Aidan", "Taylor", "Mario", "Philip", "Jake", "Levi", "Oscar", "Mitchell", "Casey",
+    "Colton", "Martin", "Francisco", "Tristan", "Bryce", "Jeffery", "Randy", "Brayden", "Spencer", "Johnny", "Manuel",
+    "Diego", "Brent", "Curtis", "Tony", "Andre", "Terry", "Eduardo", "Grant", "Russell", "Hayden", "Tanner",
+    "Johnathan", "Ivan", "Omar", "Eli", "Dakota", "Parker", "Carson", "Brendan", "Carl", "Javier", "Josiah", "Riley",
+    "Allen", "Marc", "Preston", "Danny", "Micah", "Max", "Roberto", "Rodney", "Brady", "Clayton", "Fernando", "Nicolas",
+    "Maxwell", "Hector", "Jimmy", "Edwin", "Billy", "Calvin", "Dalton", "Lawrence", "Bobby", "Collin", "Edgar",
+    "Damian", "Jamie", "Andres", "Oliver", "Kaleb", "Walter", "Louis", "Jaden", "Albert", "Roger", "Nolan", "Ricky",
+    "Lance", "Devon", "Sergio", "Ruben"]
+
+female_names =  [
+    "Jennifer", "Jessica", "Ashley", "Sarah", "Amanda", "Emily", "Elizabeth", "Melissa", "Stephanie", "Nicole",
+    "Michelle", "Samantha", "Kimberly", "Amy", "Heather", "Rachel", "Rebecca", "Lauren", "Angela", "Megan",
+    "Hannah", "Christina", "Lisa", "Amber", "Mary", "Brittany", "Emma", "Laura", "Danielle", "Madison", "Olivia",
+    "Katherine", "Kayla", "Tiffany", "Kelly", "Alexis", "Victoria", "Abigail", "Andrea", "Taylor", "Alyssa",
+    "Anna", "Sara", "Crystal", "Erin", "Maria", "Natalie", "Isabella", "Sophia", "Allison", "Shannon", "Courtney",
+    "Brianna", "Jasmine", "Jamie", "Julie", "Erica", "Alexandra", "Christine", "Julia", "Vanessa", "Grace", "Morgan",
+    "Kristen", "April", "Ava", "Brooke", "Karen", "Alicia", "Kathryn", "Katie", "Chloe", "Jacqueline", "Cynthia",
+    "Melanie", "Monica", "Mia", "Leah", "Catherine", "Patricia", "Kaitlyn", "Chelsea", "Sydney", "Tara", "Lindsey",
+    "Haley", "Kristin", "Leslie", "Hailey", "Savannah", "Kelsey", "Holly", "Diana", "Jenna", "Destiny", "Cassandra",
+    "Susan", "Tracy", "Veronica", "Katelyn", "Molly", "Caroline", "Jordan", "Lindsay", "Margaret", "Paige",
+    "Gabrielle", "Sandra", "Shelby", "Valerie", "Tina", "Kathleen", "Dawn", "Stacy", "Ella", "Tammy", "Wendy",
+    "Dana", "Kristina", "Carrie", "Sabrina", "Marissa", "Erika", "Brenda", "Mackenzie", "Audrey", "Kaylee",
+    "Evelyn", "Madeline", "Caitlin", "Lily", "Alexa", "Lori", "Autumn", "Lillian", "Denise", "Brandy", "Miranda",
+    "Stacey", "Claire", "Teresa", "Nancy", "Brandi", "Mariah", "Zoe", "Faith", "Gabriella", "Pamela", "Amelia",
+    "Addison", "Kylie", "Sofia", "Makayla", "Heidi", "Charlotte", "Sierra", "Meghan", "Whitney", "Natasha",
+    "Linda", "Alexandria", "Avery", "Briana", "Jocelyn", "Bethany", "Bailey", "Kara", "Alison", "Jill", "Aubrey",
+    "Angel", "Kendra", "Gina", "Angelica", "Ariana", "Tanya", "Katrina", "Michele", "Riley", "Brittney", "Robin",
+    "Ana", "Tonya", "Renee", "Angelina", "Brooklyn", "Breanna", "Adriana", "Sharon", "Jillian", "Theresa", "Maya",
+    "Misty", "Lydia", "Barbara", "Arianna", "Deborah", "Tamara", "Cindy", "Casey", "Christy", "Rachael", "Isabel",
+    "Gabriela", "Naomi", "Anne", "Jade", "Joanna", "Krystal", "Summer", "Desiree", "Donna", "Melinda", "Aaliyah",
+    "Deanna", "Trinity", "Bianca", "Carolyn", "Rebekah", "Nevaeh", "Monique", "Cheyenne", "Daisy", "Felicia",
+    "Krista", "Bridget"]
