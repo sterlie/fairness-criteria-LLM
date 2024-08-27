@@ -7,7 +7,7 @@ from prompts import experiment2, female_names, male_names
 all_names = female_names + male_names
 gender = ["F"]*len(female_names) + ["M"]*len(male_names) 
 
-df = pd.DataFrame(columns = ['Group', 'Gender', 'Answer'])
+df = pd.DataFrame(columns = ['group', 'gender', 'output'])
 df_name = ''
 
 def request(i):

@@ -1,0 +1,53 @@
+from transformers import pipeline
+import pandas as pd
+import os
+from collections import OrderedDict
+
+# The model is available at: https://huggingface.co/sentence-transformers/all-mpnet-base-v2.
+# The model is used in a zero-shot-classification pipeline, returning the predictied probability of affiliation with pre-defined candidate labels. 
+
+classifier = pipeline("zero-shot-classification", model="MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli")
+
+label_scores = OrderedDict()
+
+label_scores2 = OrderedDict()
+
+# path to text data files / output path
+input_path = ''
+output_path = ''
+
+
+candidate_labels = ["Technology","Science", "Literature", "Volunteer work"]
+
+# predict candidate labels for each observation 
+for filename in os.listdir(input_path):
+    df = pd.DataFrame(columns=['name', 'gender'] + candidate_labels)
+    if filename.endswith(".csv"):
+        file_path = os.path.join(input_path, filename)
+        
+        # read the CSV file into a pandas DataFrame
+        data = pd.read_csv(file_path, delimiter=',')
+                
+        # iterate over each row in the DataFrame
+        for _, row in data.iterrows():
+            name = row['Group']
+            gender = row['Gender']
+            doc = row['no_gender_answer']
+            
+            output1 = classifier(doc, candidate_labels, multi_label=False)
+
+            scores = output1['scores']
+            labels = output1['labels']
+            
+            scores_dict = dict(zip(labels, scores))
+            rounded_dict = {key: round(value, 4) for key, value in scores_dict.items()}
+
+            df = df.append({'name': name, 'gender': gender, **rounded_dict}, ignore_index=True)
+
+
+        # extract the base name of the file (without the extension)
+        base_name = os.path.splitext(filename)[0]
+
+        # save the DataFrame to a CSV file in the specified output directory
+        csv_filename = os.path.join(output_path, f'{base_name}_scores.csv')
+        df.to_csv(csv_filename, index=False)

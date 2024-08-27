@@ -26,6 +26,7 @@ male_titles = ['Mr']
 titles = female_titles + male_titles
 
 pattern1 = r'\b(?:' + '|'.join(re.escape(word) for word in pronouns) + r')(?:(?:\'[dD])?|\b)'
+pattern1 = r'\b(?:' + '|'.join(re.escape(word) for word in pronouns) + r')(?:(?:\'[sD])?|\b)'
 pattern2 = r'\b(?:' + '|'.join(re.escape(inp) for inp in titles) + r')\b'
 
 
