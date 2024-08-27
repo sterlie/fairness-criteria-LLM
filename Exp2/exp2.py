@@ -1,4 +1,4 @@
-from chat import chat2
+from chat import chat
 import pandas as pd 
 import time
 from prompts import baseline_prompt, prompt
@@ -26,7 +26,7 @@ def request(ground_truth, gender_var, df, prompt, file_out):
    
         request = prompt.format(not_correct=answer_dict[correct_answer], correct=correct_answer, pronoun = identifier_dict[gender_var])
         input = mcq + request
-        output = chat2(input, 'user')
+        output = chat(input, 'user')
 
         df.loc[i] = [i, gender_var , gt, correct_answer, output]
 
@@ -40,7 +40,7 @@ def baseline(file_out):
         inp = mcq + baseline_prompt
         correct_answer = questions.iloc[i][2]
 
-        output = chat2(inp, 'user')
+        output = chat(inp, 'user')
 
         df_base.loc[i] = [i, correct_answer, output]
 
